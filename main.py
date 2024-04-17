@@ -67,13 +67,13 @@ def parse_math():
         df_teams = pd.concat([df_teams, team_date], ignore_index=True)
         # Print status of the current running job
         percent = f"{(index * 100 / len(df_2015))}"
-        print(f"Processing {percent[:4]}% complete")
+        print(f"Processing {percent[:4]}% complete", end='\r')
 
     # Write the DataFrames to CSV files
     df_institutions.to_csv('output/Institutions.csv', index=False)
     df_teams.to_csv('output/Teams.csv', index=False)
     # Update user on the current status
-    print("Processing 100% complete")
+    print("Processing 100% complete", end='\r')
     return True
 
 
